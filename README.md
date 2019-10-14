@@ -1,2 +1,2 @@
 # Projeto-AED
-Projeto da materia de Algoritmo e Estrutura de Dados
+Projeto da disciplina Algorítmos e Estrutura de Dados 
