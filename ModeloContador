@@ -1,0 +1,92 @@
+->Para tratar casos com retorno para garantia (consulta de data) -Obtendo número de dias úteis entre duas datas com C#
+https://vladimirrech.blogspot.com/2014/06/obtendo-numero-de-dias-uteis-entre-duas.html
+
+->Método para calcular a data
+//Precisa receber os dados no formato correto
+private static int calculeDate(DateTime startDate, DateTime endDate) {
+    int days = 0;
+    
+    while(startDate.Date <= endDate.Date) {
+      if(startDate.DayOfWeek != DayOfWeek.Saturday 
+         && startDate.DayOfWeek != DayOfWeek.Sunday)
+         days++;
+         
+      startDate = startDate.AddDays(1);
+    }
+    
+    return days;
+  }
+  
+  ->Código para aplicação
+  using System;
+
+public class Program {
+  private static DateTime _startDate, _endDate; 
+  
+  public static void Main(string[] args) {
+    if(args.Length < 1 || args.Length > 2) {
+      Console.WriteLine(@"Uso: workdays data inicial 
+         [data final]. Use -h ou -? para obter ajuda.");
+
+      return;
+    }
+    
+    if(!doValidations(args))
+      return;
+      
+    Console.WriteLine(calculeDate(_startDate, _endDate));
+  }
+
+-> Método para validação de dados
+//Se foram passados argumentos para ajuda, deve mostrar a mensagem de ajuda e encerrar o programa.
+//Se as datas passadas são válidas.
+//Por fim, se forem passadas duas datas estas devem ser colocadas na ordem correta para o cálculo dos dias.
+
+private static bool doValidations(string[] args) {    
+    args[0] = args[0].ToLower();
+    
+    if(args[0] == "/?" || args[0] == "-?" || 
+       args[0] == "/h" || args[0] == "-h") {
+      Console.WriteLine("workdays data inicial [data final]");
+      Console.WriteLine(
+          "\tConta os dias uteis corridos entre a data inicial e a final.");
+      Console.WriteLine(
+          "\tRetorna um numero inteiro correspondente aos dias.");
+      Console.WriteLine(@"\tSe for informada apenas uma data, 
+         esta deve ser menor que a
+         \n\tatual e o ano maior que zero.");
+      return false;
+    }
+    
+    DateTime[] dates = new DateTime[2] { DateTime.Today, DateTime.Today };
+    
+    for(int i = 0; i < args.Length; i++) {    
+      if (!DateTime.TryParse(args[i], out dates[i])) {
+        Console.WriteLine("A data {0} informada incorreta: {1}", 
+           (i == 0 ? "Inicial" : "Final"),  args[i]);
+        return false;
+      }
+    
+      if(args.Length == 1 && 
+           dates[0].Date > DateTime.Today.Date) {
+        Console.WriteLine("A data deve ser menor do que a atual.");
+        return false;
+      }
+    }
+    
+    if(dates[1].Date < dates[0].Date) {
+      _startDate = dates[1];
+      _endDate = dates[0];
+    }
+    else {
+      _startDate = dates[0];
+      _endDate = dates[1];
+    }
+    
+    return true;      
+  }
+
+->
+  
+  
+  
