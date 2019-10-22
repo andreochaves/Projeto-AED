@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Autocenter
+{
+    class CadastrarCliente
+    {
+        private string nome;
+        private string rua;
+        private string bairro;
+        private string cidade;
+        private string estado;
+        private int numeroDaCasa;
+
+        public CadastrarCliente(string nome, string rua,int numero, string bairro, string cidade, string estado)
+        {
+            this.nome = nome;
+            this.rua = rua;
+            numeroDaCasa = numero;
+            this.bairro = bairro;
+            this.cidade = cidade;
+            this.estado = estado;
+        }
+        //busca
+        public string getNome()
+        {
+          return nome;
+        }
+        public string getRua()
+        {
+          return rua;
+        }
+        public int getNumero()
+        {
+          return numero;
+        }
+        public string getBairro()
+        {
+          return bairro;
+        }
+        public string getCidade()
+        {
+          return cidade;
+        }
+        public string getEstado()
+        {
+          return estado;
+        }
+        //adicionar
+        public void setNome (string n)
+        {
+          nome=n;
+        }
+        public void setRua (string r)
+        {
+          rua=r;
+        }
+        public void setNumero (int num)
+        {
+          numero=num;
+        }
+        public void setBairro (string b)
+        {
+          bairro=b;
+        }
+        public void setCidade (string c)
+        { 
+        cidade=c;
+        }
+        public void setEstado (string e)
+        {
+          estado= e;
+        }
+
+
+
+
+    }
+}
