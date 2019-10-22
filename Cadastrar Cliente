@@ -92,7 +92,7 @@ namespace Autocenter
         }
         public void setModelo (string modelo)
         {
-          modeloDoCarro= mod;
+          modeloDoCarro= modelo;
         }
         public void setMarca (string marca)
         {
