@@ -15,11 +15,11 @@ namespace Autocenter
         private string estado;
         private int numeroDaCasa;
 
-        public CadastrarCliente(string nome, string rua,int numero, string bairro, string cidade, string estado)
+        public CadastrarCliente(string nome, string rua,int numeroDaCasa, string bairro, string cidade, string estado)
         {
             this.nome = nome;
             this.rua = rua;
-            numeroDaCasa = numero;
+            numeroDaCasa = numeroDaCasa;
             this.bairro = bairro;
             this.cidade = cidade;
             this.estado = estado;
@@ -35,7 +35,7 @@ namespace Autocenter
         }
         public int getNumero()
         {
-          return numero;
+          return numeroDaCasa;
         }
         public string getBairro()
         {
@@ -60,7 +60,7 @@ namespace Autocenter
         }
         public void setNumero (int num)
         {
-          numero=num;
+          numeroDaCasa=num;
         }
         public void setBairro (string b)
         {
