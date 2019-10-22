@@ -64,7 +64,7 @@ namespace Autocenter
         }
         public string getPlaca()
         {
-          return= placaDoCarro;
+          return placaDoCarro;
         }
         public void setNome (string n)
         {
