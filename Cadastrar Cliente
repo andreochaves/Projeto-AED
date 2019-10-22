@@ -14,15 +14,21 @@ namespace Autocenter
         private string cidade;
         private string estado;
         private int numeroDaCasa;
+        private string modeloDoCarro;
+        private string marcaDoCarro;
+        private string placaDoCarro;
 
-        public CadastrarCliente(string nome, string rua, int numeroDaCasa, string bairro, string cidade, string estado)
+        public CadastrarCliente(string nome, string rua,int numeroDaCasa, string bairro, string cidade, string estado, string modeloDoCarro, string marcaDoCarro, string placaDoCarro )
         {
             this.nome = nome;
             this.rua = rua;
-            numeroDaCasa = numeroDaCasa;
+            this.numeroDaCasa = numeroDaCasa;
             this.bairro = bairro;
             this.cidade = cidade;
             this.estado = estado;
+            this.modeloDoCarro= modeloDoCarro;
+            this.marcaDoCarro= marcaDoCarro;
+            this.placaDoCarro= placaDoCarro;
         }
         public string getNome()
         {
@@ -48,6 +54,18 @@ namespace Autocenter
         {
           return estado;
         }
+        public string getModelo()
+        {
+          return modeloDoCarro;
+        }
+        public string getMarca()
+        {
+          return marcaDoCarro;
+        }
+        public string getPlaca()
+        {
+          return= placaDoCarro;
+        }
         public void setNome (string n)
         {
           nome=n;
@@ -72,7 +90,18 @@ namespace Autocenter
         {
           estado= e;
         }
-
+        public void setModelo (string modelo)
+        {
+          modeloDoCarro= mod;
+        }
+        public void setMarca (string marca)
+        {
+          marcaDoCarro= marca;
+        }
+        public void setPlaca (string p)
+        {
+          placaDoCarro= p;
+        }
 
 
 
