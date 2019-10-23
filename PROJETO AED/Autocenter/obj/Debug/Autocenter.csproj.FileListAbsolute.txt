@@ -1,0 +1,14 @@
+C:\Users\ANDRÉ\source\repos\Autocenter\Autocenter\bin\Debug\Autocenter.exe.config
+C:\Users\ANDRÉ\source\repos\Autocenter\Autocenter\bin\Debug\Autocenter.exe
+C:\Users\ANDRÉ\source\repos\Autocenter\Autocenter\bin\Debug\Autocenter.pdb
+C:\Users\ANDRÉ\source\repos\Autocenter\Autocenter\obj\Debug\Autocenter.csprojAssemblyReference.cache
+C:\Users\ANDRÉ\source\repos\Autocenter\Autocenter\obj\Debug\Autocenter.csproj.CoreCompileInputs.cache
+C:\Users\ANDRÉ\source\repos\Autocenter\Autocenter\obj\Debug\Autocenter.exe
+C:\Users\ANDRÉ\source\repos\Autocenter\Autocenter\obj\Debug\Autocenter.pdb
+C:\Users\ANDRÉ\Desktop\PROJETO AED\Autocenter\bin\Debug\Autocenter.exe.config
+C:\Users\ANDRÉ\Desktop\PROJETO AED\Autocenter\bin\Debug\Autocenter.exe
+C:\Users\ANDRÉ\Desktop\PROJETO AED\Autocenter\bin\Debug\Autocenter.pdb
+C:\Users\ANDRÉ\Desktop\PROJETO AED\Autocenter\obj\Debug\Autocenter.csprojAssemblyReference.cache
+C:\Users\ANDRÉ\Desktop\PROJETO AED\Autocenter\obj\Debug\Autocenter.csproj.CoreCompileInputs.cache
+C:\Users\ANDRÉ\Desktop\PROJETO AED\Autocenter\obj\Debug\Autocenter.exe
+C:\Users\ANDRÉ\Desktop\PROJETO AED\Autocenter\obj\Debug\Autocenter.pdb
