@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +20,12 @@ namespace Autocenter
 
         public string LerArq()
         {
-                //string[] todasLnhas = File.ReadAllLines("placa.txt");
-            StreamReader ler = new StreamReader(this.Arquivo);
-            string conteudo = ler.ReadLine();
-            ler.Close();
-            return conteudo;
+           	string[] todasLnhas = File.ReadAllLines(Arquivo);
+			if(todasLnhas.Count > 0){
+				return todasLnhas[0];
+			}else{
+				return "";
+			}
         }
 
         public string getArquivo()
