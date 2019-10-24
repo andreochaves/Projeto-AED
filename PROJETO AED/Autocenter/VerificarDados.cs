@@ -16,22 +16,14 @@ namespace Autocenter
             this.Arquivo = Arquivo;
         }
 
-        public void EscreverDados(string gravar)
-        {
-            StreamWriter sw = new StreamWriter(this.Arquivo, true);
-            sw.WriteLine(this.Arquivo);
-            sw.Close();
-        }
+        
 
         public string LerArq()
         {
-            string conteudo = string.Empty;
-            if (File.Exists(this.Arquivo))
-            {
-                StreamReader sr = new StreamReader(this.Arquivo);
-                conteudo = sr.ReadToEnd();
-                sr.Close();
-            }
+                //string[] todasLnhas = File.ReadAllLines("placa.txt");
+            StreamReader ler = new StreamReader(this.Arquivo);
+            string conteudo = ler.ReadLine();
+            ler.Close();
             return conteudo;
         }
 

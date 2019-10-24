@@ -72,14 +72,15 @@ namespace Autocenter
             }
             else if (selecao == 2)
             {
-                novaVerificacao.EscreverDados(novaVerificacao.LerArq());
+                //novaVerificacao.LerArq(); 
+                Console.WriteLine(novaVerificacao.LerArq());
             }
             else
             {
                 Console.WriteLine("Opção Invalida!");
             }
 
-            Console.WriteLine(novaVerificacao.LerArq());
+           
 
 
 
