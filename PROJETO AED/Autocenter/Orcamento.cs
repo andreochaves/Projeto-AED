@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.IO;
 namespace Autocenter
 {
     class Orcamento
@@ -23,6 +23,12 @@ namespace Autocenter
             
         }
 
+        public void gravarArquvo(string nomeArquvo)
+        {
+            StreamWriter escrever = File.AppendText(nomeArquvo);
+            escrever.WriteLine(this.servico + ";" + this.quantidade + ";" + this.valorUnitario + ";" + this.valorTotal);
+            escrever.Close();
+        }
         public void ValorTotal()
         {
             valorTotal = quantidade * valorUnitario;

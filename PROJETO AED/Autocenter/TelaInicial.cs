@@ -8,18 +8,19 @@ namespace Autocenter
 {
     class TelaInicial
     {
-        private int select;
+        private string select;
+        
 
-        public TelaInicial(int select)
+        public TelaInicial(string select)
         {
             this.select = select;
         }
 
-        public int getSelect()
+        public string getSelect()
         {
             return select;
         }
-        public void setSelect(int s)
+        public void setSelect(string s)
         {
             select = s;
         }

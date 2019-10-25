@@ -1,0 +1,10 @@
+andre;tupa;32;sao marcos;serra;es;;;
+andre;rua tulipa;1;sao marcos;serra;es;celta;chevrolet;aaa-9999
+andre;rua tulipa;1;sao marcos;serra;es;celta;chevrolet;aaa-9999
+san;asd;234;asd;asd;asd;asd;asd;fd
+asd;asd;12;asd;asd;asd;asd;asd;asd
+asd;asd;321;asd;asdf;asd;asd;asd;asd
+dfsf;asda;1;ase;asdf;asd;asd;asd;asd
+andre;tulipa;32;se;re;es;asd;acv;as
+asbd;asd;1;asd;asd;asd;asd;asd;asd
+asd;asd;32;sad;asd;asd;asd;asd;asd

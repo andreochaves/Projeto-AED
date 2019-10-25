@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,21 +11,36 @@ namespace Autocenter
     {
         private string Arquivo;
         
+        
         public VerificarDados(string Arquivo)
         {
-            this.Arquivo = Arquivo;
+           this.Arquivo = Arquivo;
         }
 
-        
+
 
         public string LerArq()
         {
-           	string[] todasLnhas = File.ReadAllLines(Arquivo);
-			if(todasLnhas.Count > 0){
-				return todasLnhas[0];
-			}else{
-				return "";
-			}
+            List<VerificarDados> dadosCliente = new List<VerificarDados>();
+            StreamReader sr = new StreamReader(Arquivo, Encoding.UTF8);
+            string ler = "";
+            while (true)
+            {
+                ler = sr.ReadLine();
+                if (ler != null)
+                {
+                    string[] DadosColetados = ler.Split(';');
+                    dadosCliente.Add(new VerificarDados ( DadosColetados[0] ));
+                    Console.WriteLine(DadosColetados[0]);
+                }
+                //Arquivo = 
+            }
+
+
+
+
+
+            return ler;
         }
 
         public string getArquivo()
@@ -36,5 +51,6 @@ namespace Autocenter
         {
             Arquivo = a;
         }
+        
     }
 }

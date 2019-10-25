@@ -11,8 +11,10 @@ namespace Autocenter
     {
         static void Main(string[] args)
         {
+            string opcao="";
+
             //Chamando Tela Inicial
-            int selecao = 0;
+            string selecao = "";
             TelaInicial novaTela = new TelaInicial(selecao);
 
             //Chamando Formulario de Cadastro
@@ -25,70 +27,110 @@ namespace Autocenter
             string placa = "";
             string modelo = "";
             string marca = "";
+
             CadastrarCliente novoCliente = new CadastrarCliente(nome, rua, numero, bairro, cidade, estado, modelo, marca, placa);
 
-            //Gravar Arquivo
-           // FileStream novo = new FileStream("placa.txt", FileMode.Create, FileAccess.ReadWrite);
-            //StreamWriter sw = new StreamWriter(novo, Encoding.UTF8);
+            //Chamando a Classe Orçamento
+            string servico="";
+            int qtd=0;
+            float valorU=0;
+            float valorT=0;
+
+            Orcamento novoOrcamento = new Orcamento(servico, qtd, valorU, valorT);
             
 
-            File.WriteAllText("placa.txt", "");
-            string[] todasLnhas = File.ReadAllLines("placa.txt");
-            string gravar = "placa.txt";
-            //Verificar dados
-            string verificar = "placa.txt";
+            string gravarDados = "Cliente.txt";
+            string gravarOrcamento = "Orcamento.txt";
+            string verificar = "Cliente.txt";
             VerificarDados novaVerificacao = new VerificarDados(verificar);
-           // StreamReader sr = new StreamReader(novo, Encoding.UTF8);
 
-            //Começo do Programa
-            Console.WriteLine("Digite opção desejada:");
-            selecao = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite:\n 1 - Cadastrar novo cliente \n 2 - Verifcar Orçamento \n sair - para fechar o programa\n");
 
-            if (selecao == 1)
-            {
+            while (selecao != "sair") {
+                //Começo do Programa
+                Console.WriteLine("Digite opção desejada:");
+                selecao = Console.ReadLine();
+
+                if (selecao == "1")
+                {
 
 
-                Console.WriteLine("Qual seu nome?");
-                nome = Console.ReadLine();
-                Console.WriteLine("Seu Endereço?");
-                rua = Console.ReadLine();
-                Console.WriteLine("Numero?");
-                numero = int.Parse(Console.ReadLine());
-                Console.WriteLine("Bairro?");
-                bairro = Console.ReadLine();
-                Console.WriteLine("Cidade?");
-                cidade = Console.ReadLine();
-                Console.WriteLine("Estado?");
-                estado = Console.ReadLine();
-                novoCliente.setNome(nome);
-                novoCliente.setRua(rua);
-                novoCliente.setNumero(numero);
-                novoCliente.setBairro(bairro);
-                novoCliente.setCidade(cidade);
-                novoCliente.setEstado(estado);
-                novoCliente.gravarArquvo(gravar);
-                //sw.WriteLine(novoCliente.getNome(), novoCliente.getRua(), novoCliente.getNumero(), novoCliente.getBairro(), novoCliente.getCidade(), novoCliente.getEstado());
+                    Console.WriteLine("Qual seu nome?");
+                    nome = Console.ReadLine();
+                    Console.WriteLine("Seu Endereço?");
+                    rua = Console.ReadLine();
+                    Console.WriteLine("Numero?");
+                    numero = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Bairro?");
+                    bairro = Console.ReadLine();
+                    Console.WriteLine("Cidade?");
+                    cidade = Console.ReadLine();
+                    Console.WriteLine("Estado?");
+                    estado = Console.ReadLine();
+                    Console.WriteLine("Modelo do Carro?");
+                    modelo = Console.ReadLine();
+                    Console.WriteLine("Marca do Carro?");
+                    marca = Console.ReadLine();
+                    Console.WriteLine("Placa do Carro?");
+                    placa = Console.ReadLine();
+                    novoCliente.setNome(nome);
+                    novoCliente.setRua(rua);
+                    novoCliente.setNumero(numero);
+                    novoCliente.setBairro(bairro);
+                    novoCliente.setCidade(cidade);
+                    novoCliente.setEstado(estado);
+                    novoCliente.setModelo(modelo);
+                    novoCliente.setMarca(marca);
+                    novoCliente.setPlaca(placa);
+                    novoCliente.gravarArquvo(gravarDados);
+
+                    Console.WriteLine("Deseja fazer um Orçamento?");
+                    opcao = Console.ReadLine();
+                    if (opcao == "sim")
+                    {
+                        while (opcao == "sim")
+                       {
+                            
+
+                            Console.WriteLine("Qual o serviço?");
+                            servico = Console.ReadLine();
+                            Console.WriteLine("Quantidade?");
+                            qtd = int.Parse(Console.ReadLine());
+                            Console.WriteLine("Valor Unitário?");
+                            valorU = float.Parse(Console.ReadLine());
+                            novoOrcamento.setServico(servico);
+                            novoOrcamento.setQuantidade(qtd);
+                            novoOrcamento.setValorUnitario(valorU);
+                            novoOrcamento.ValorTotal();
+                            novoOrcamento.gravarArquvo(gravarOrcamento);
+                            Console.WriteLine("Deseja incuir novo serviço?");
+                            opcao = Console.ReadLine();
+
+                        }
+                    }
+                    
+
+                }
+                else if (selecao == "2")
+                {
+                    //; 
+                    Console.WriteLine(novaVerificacao.LerArq());
+                }
+                else if (selecao == "sair")
+                {
+                    //; 
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Opção Invalida!");
+                }
+
 
             }
-            else if (selecao == 2)
-            {
-                //novaVerificacao.LerArq(); 
-                Console.WriteLine(novaVerificacao.LerArq());
-            }
-            else
-            {
-                Console.WriteLine("Opção Invalida!");
-            }
-
-           
 
 
 
-
-
-            //sw.Close();
-            //novo.Close();
-            //sr.Close();
 
             Console.ReadKey();
 
