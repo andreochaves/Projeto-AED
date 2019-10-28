@@ -30,6 +30,8 @@ namespace Autocenter
 
             CadastrarCliente novoCliente = new CadastrarCliente(nome, rua, numero, bairro, cidade, estado, modelo, marca, placa);
 
+
+            
             //Chamando a Classe Orçamento
             string servico="";
             int qtd=0;
@@ -37,12 +39,16 @@ namespace Autocenter
             float valorT=0;
 
             Orcamento novoOrcamento = new Orcamento(servico, qtd, valorU, valorT);
-            
+
+            //Tentando Ver
+            VerCliente ver = new VerCliente(nome, rua, numero, bairro, cidade, estado, modelo, marca, placa);
+            VerOrcamento ver2 = new VerOrcamento(servico, qtd, valorU, valorT);
+
 
             string gravarDados = "Cliente.txt";
             string gravarOrcamento = "Orcamento.txt";
-            string verificar = "Cliente.txt";
-            VerificarDados novaVerificacao = new VerificarDados(verificar);
+            string verificar3 = "Pesquisar.txt";
+            JuntarDados novaVerificacao = new JuntarDados(gravarDados,gravarOrcamento,verificar3);
 
             Console.WriteLine("Digite:\n 1 - Cadastrar novo cliente \n 2 - Verifcar Orçamento \n sair - para fechar o programa\n");
 
@@ -88,10 +94,6 @@ namespace Autocenter
                     opcao = Console.ReadLine();
                     if (opcao == "sim")
                     {
-                        while (opcao == "sim")
-                       {
-                            
-
                             Console.WriteLine("Qual o serviço?");
                             servico = Console.ReadLine();
                             Console.WriteLine("Quantidade?");
@@ -103,22 +105,26 @@ namespace Autocenter
                             novoOrcamento.setValorUnitario(valorU);
                             novoOrcamento.ValorTotal();
                             novoOrcamento.gravarArquvo(gravarOrcamento);
-                            Console.WriteLine("Deseja incuir novo serviço?");
-                            opcao = Console.ReadLine();
-
-                        }
                     }
-                    
 
+                    novaVerificacao.LerArq1(verificar3);
+
+                    Console.Clear();
                 }
                 else if (selecao == "2")
                 {
-                    //; 
-                    Console.WriteLine(novaVerificacao.LerArq());
+                    Console.WriteLine("Dados do Cliente:");
+                    ver.LerArq();
+                    Console.WriteLine("Dados do Orcamento:");
+                    ver2.LerArq();
+                    Console.WriteLine("\n \n");
+                    //  Console.WriteLine("Digite opção desejada:");
+                    //selecao = Console.ReadLine();
+                    Console.ReadKey();
+                    Console.Clear();
                 }
                 else if (selecao == "sair")
                 {
-                    //; 
                     break;
                 }
                 else

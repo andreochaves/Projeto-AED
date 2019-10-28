@@ -44,11 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CadastrarCliente.cs" />
+    <Compile Include="JuntarDados.cs" />
     <Compile Include="Orcamento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TelaInicial.cs" />
-    <Compile Include="VerificarDados.cs" />
+    <Compile Include="VerCliente.cs" />
+    <Compile Include="VerOrcamento.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

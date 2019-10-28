@@ -1,3 +1,8 @@
-limpeza;2;1,5;0
-limpeza;1;1,45;0
-testar;5;45;225
+troca de pneus;4;179,9;719,6
+limpeza;1;34,9;34,9
+troca de vela;4;49,9;199,6
+lavar;1;80;80
+vish;1;50;50
+xii;1;4;4
+trocar farol;2;349,9;699,8
+velar;1;50;50
